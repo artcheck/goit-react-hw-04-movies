@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Components/movieReviews/MovieReviews.module.css"],"names":[],"mappings":"AAAA,0BACE,SACF,CAEA,0BACE,eAAgB,CAChB,YACF","file":"9.4b2d0f58.chunk.css","sourcesContent":[".list {\r\n  padding: 0;\r\n}\r\n\r\n.item {\r\n  list-style: none;\r\n  padding: 50px;\r\n}\r\n"]}
