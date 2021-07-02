@@ -10,7 +10,7 @@ const MovieDetailsPage = lazy(() =>
 );
 
 class App extends Component {
-  rebder() {
+  render() {
     return (
       <Suspense fallback={<div>Loading...</div>}>
         <header className={css.Header}>
