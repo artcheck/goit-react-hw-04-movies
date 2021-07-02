@@ -9,8 +9,8 @@ const getMovieTrending = async () => {
       `${BASE_URL}/trending/movie/week?api_key=${key}`
     );
     return response.data.results;
-  } catch (error) {
-    throw new Error(error);
+  } catch (e) {
+    throw e;
   }
 };
 
@@ -20,8 +20,8 @@ const getSearchMovies = async (query) => {
       `${BASE_URL}/search/movie?api_key=${key}&query=${query}&language=en-US&page=1&include_adult=false`
     );
     return response.data.results;
-  } catch (error) {
-    throw new Error(error);
+  } catch (e) {
+    throw e;
   }
 };
 
@@ -31,8 +31,8 @@ const getMovieDetails = async (movieId) => {
       `${BASE_URL}/movie/${movieId}?api_key=${key}&language=en-US`
     );
     return response.data;
-  } catch (error) {
-    throw new Error(error);
+  } catch (e) {
+    throw e;
   }
 };
 
@@ -43,7 +43,7 @@ const getMovieCredits = async (movieId) => {
     );
     return response.data.cast;
   } catch (e) {
-    throw new Error(e);
+    throw e;
   }
 };
 
@@ -54,7 +54,7 @@ const getMovieReviews = async (movieId) => {
     );
     return response.data.results;
   } catch (e) {
-    throw new Error(e);
+    throw e;
   }
 };
 

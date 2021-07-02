@@ -1,14 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, NavLink, Switch } from "react-router-dom";
-import HomePage from "./pages/homePage/HomePage";
-import MoviePage from "./pages/moviePage/MoviePage";
-import MovieDetailsPage from "./pages/movieDetailsPage/MovieDetailsPage";
 import routes from "./routes/routes";
 import css from "./App.module.css";
 
+const HomePage = lazy(() => import("./pages/homePage/HomePage"));
+const MoviePage = lazy(() => import("./pages/moviePage/MoviePage"));
+const MovieDetailsPage = lazy(() =>
+  import("./pages/movieDetailsPage/MovieDetailsPage")
+);
+
 const App = () => {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <header className={css.Header}>
         <nav>
           <ul className={css.list}>
@@ -39,7 +42,7 @@ const App = () => {
         <Route path={routes.movieDetails} component={MovieDetailsPage} />
         <Route path={routes.moviePage} component={MoviePage} />
       </Switch>
-    </>
+    </Suspense>
   );
 };
 
